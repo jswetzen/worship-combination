@@ -7,5 +7,4 @@ deploy:
   file: worshipsongs.zip
   on:
     repo: jswetzen/worship-combination
-    branch: master
   skip_cleanup: 'true'
