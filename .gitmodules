@@ -1,0 +1,6 @@
+[submodule "worship-swedish"]
+	path = worship-swedish
+	url = git@github.com:jswetzen/worship-swedish.git
+[submodule "worship"]
+	path = worship
+	url = git@github.com:mattgraham/worship.git
