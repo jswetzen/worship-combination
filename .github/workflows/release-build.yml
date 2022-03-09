@@ -1,0 +1,26 @@
+---
+name: Master release
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: |
+          zip worshipsongs.zip worship/*.onsong worship-swedish/*.onsong
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Master Build"
+          files: |
+            worshipsongs.zip
