@@ -13,9 +13,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Build
         run: |
           zip worshipsongs.zip worship/*.onsong worship-swedish/*.onsong
+      - name: Release
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
